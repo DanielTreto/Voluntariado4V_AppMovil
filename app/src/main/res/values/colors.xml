@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimaryVariant">#0D47A1</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="background_gray">#F5F7FA</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="icon_gray">#606060</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="green_active">#4CAF50</color>
+    <color name="red_error">#F44336</color>
+
+    <color name="purple_500">@color/colorPrimary</color>
+    <color name="teal_200">@color/colorPrimary</color>
+    <color name="teal_700">@color/colorPrimaryVariant</color>
+</resources>
