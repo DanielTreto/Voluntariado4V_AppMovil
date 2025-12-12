@@ -104,17 +104,16 @@ public class ReportsFragment extends Fragment {
         entries.add(new PieEntry(15f, "Asistencia Social"));
         entries.add(new PieEntry(10f, "Cultural"));
 
-        // 2. Colores (Verde, Azul, Naranja, Rosa)
         ArrayList<Integer> colors = new ArrayList<>();
         colors.add(Color.parseColor("#4CAF50")); // Verde
         colors.add(Color.parseColor("#2196F3")); // Azul
         colors.add(Color.parseColor("#FF9800")); // Naranja
         colors.add(Color.parseColor("#E91E63")); // Rosa
 
-        // 3. Configurar Dataset
+
         PieDataSet dataSet = new PieDataSet(entries, "");
         dataSet.setColors(colors);
-        dataSet.setSliceSpace(3f); // Espacio entre rebanadas
+        dataSet.setSliceSpace(3f);
         dataSet.setValueTextColor(Color.WHITE);
         dataSet.setValueTextSize(12f);
 
