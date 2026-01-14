@@ -16,9 +16,16 @@ import cuatrovientos.voluntariado.model.VolunteerActivity;
 public class ActivitiesAdapter extends RecyclerView.Adapter<ActivitiesAdapter.ActivityViewHolder> {
 
     private List<VolunteerActivity> activityList;
+    private boolean isStudent = false;
 
     public ActivitiesAdapter(List<VolunteerActivity> activityList) {
         this.activityList = activityList;
+        this.isStudent = false;
+    }
+
+    public ActivitiesAdapter(List<VolunteerActivity> activityList, boolean isStudent) {
+        this.activityList = activityList;
+        this.isStudent = isStudent;
     }
 
     public void updateList(List<VolunteerActivity> newList) {
@@ -47,14 +54,20 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<ActivitiesAdapter.Ac
         // Simular imagen con color
         holder.imgHeader.setColorFilter(act.getImageColor(), PorterDuff.Mode.SRC_IN);
 
-        if (act.getStatus().equals("Active")) {
-            // Pestaña ACTIVIDADES: Mostrar botones de gestión
-            holder.layoutButtonsActive.setVisibility(View.VISIBLE);
+        if (isStudent) {
+            // Estudiante: No mostrar botones de gestión
+            holder.layoutButtonsActive.setVisibility(View.GONE);
             holder.layoutButtonsPending.setVisibility(View.GONE);
         } else {
-            // Pestaña SOLICITUDES: Mostrar botones Aceptar/Denegar grande
-            holder.layoutButtonsActive.setVisibility(View.GONE);
-            holder.layoutButtonsPending.setVisibility(View.VISIBLE);
+            if (act.getStatus().equals("Active")) {
+                // Pestaña ACTIVIDADES: Mostrar botones de gestión
+                holder.layoutButtonsActive.setVisibility(View.VISIBLE);
+                holder.layoutButtonsPending.setVisibility(View.GONE);
+            } else {
+                // Pestaña SOLICITUDES: Mostrar botones Aceptar/Denegar grande
+                holder.layoutButtonsActive.setVisibility(View.GONE);
+                holder.layoutButtonsPending.setVisibility(View.VISIBLE);
+            }
         }
     }
 
