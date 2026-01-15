@@ -3,17 +3,17 @@ package cuatrovientos.voluntariado.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import cuatrovientos.voluntariado.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText etUsername;
-    private EditText etPassword;
-    private Button btnLogin;
+    private TextInputEditText etUsername;
+    private TextInputEditText etPassword;
+    private MaterialButton btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

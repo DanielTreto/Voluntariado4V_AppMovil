@@ -26,47 +26,11 @@
                     android:id="@+id/toolbar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Volunteer Management"
+                    android:text="Gestión de voluntariado"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/text_primary"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-                <ImageView
-                    android:id="@+id/search_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_search"
-                    android:padding="8dp"
-                    android:layout_marginEnd="8dp"
-                    app:tint="@color/icon_gray"
-                    app:layout_constraintEnd_toStartOf="@+id/bell_icon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-                <ImageView
-                    android:id="@+id/bell_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_bell"
-                    android:padding="8dp"
-                    android:layout_marginEnd="8dp"
-                    app:tint="@color/icon_gray"
-                    app:layout_constraintEnd_toStartOf="@+id/profile_icon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-                <ImageView
-                    android:id="@+id/profile_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_person"
-                    android:padding="8dp"
-                    android:layout_marginEnd="16dp"
-                    app:tint="@color/icon_gray"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"/>
 

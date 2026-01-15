@@ -44,12 +44,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        // 4. Cargar el fragmento por defecto (Dashboard) al iniciar
+        // 4. Cargar el fragmento por defecto (Reports) al iniciar
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.nav_host_fragment, BlankFragment.newInstance("Dashboard", ""))
+                    .replace(R.id.nav_host_fragment, new cuatrovientos.voluntariado.fragments.ReportsFragment())
                     .commit();
-            navigationView.setCheckedItem(R.id.nav_dashboard);
+            navigationView.setCheckedItem(R.id.nav_reports);
         }
     }
 
@@ -70,9 +70,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
 
-        if (id == R.id.nav_dashboard) {
-            selectedFragment = BlankFragment.newInstance("Dashboard", "Vista Principal");
-        } else if (id == R.id.nav_volunteers) {
+        if (id == R.id.nav_volunteers) {
             selectedFragment = new cuatrovientos.voluntariado.fragments.VolunteersFragment();
         } else if (id == R.id.nav_organizations) {
             selectedFragment = new cuatrovientos.voluntariado.fragments.OrganizationsFragment();
@@ -83,9 +81,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_reports) {
             selectedFragment = new cuatrovientos.voluntariado.fragments.ReportsFragment();
         } else if (id == R.id.nav_settings) {
-            selectedFragment = BlankFragment.newInstance("Settings", "Configuración de Usuario");
+            selectedFragment = new cuatrovientos.voluntariado.fragments.SettingsFragment();
         } else if (id == R.id.nav_logout) {
-            selectedFragment = BlankFragment.newInstance("Logout", "Cerrando sesión...");
+            // Logout Logic
+            android.content.Intent intent = new android.content.Intent(this, cuatrovientos.voluntariado.activities.LoginActivity.class);
+            intent.setFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK | android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            return true;
         }
 
         if (selectedFragment != null) {
